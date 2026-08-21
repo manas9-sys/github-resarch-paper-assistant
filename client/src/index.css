@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans transition-colors duration-200;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* IEEE Two-Column Layout Simulation for Preview & Print */
+.ieee-paper-preview {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  color: #111827;
+  background-color: #ffffff;
+  line-height: 1.35;
+  font-size: 10pt;
+}
+
+.ieee-columns {
+  column-count: 2;
+  column-gap: 20px;
+  column-rule: 0.5px solid #e5e7eb;
+  text-align: justify;
+}
+
+.ieee-title {
+  font-size: 22pt;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.ieee-authors {
+  text-align: center;
+  font-size: 10pt;
+  margin-bottom: 20px;
+}
+
+.ieee-section-heading {
+  font-size: 10.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #111827;
+  padding-bottom: 2px;
+}
+
+.ieee-subsection-heading {
+  font-size: 10pt;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+/* Markdown formatting inside paper */
+.prose-academic p {
+  margin-bottom: 0.75rem;
+  text-indent: 1.25rem;
+}
+
+.prose-academic p:first-of-type {
+  text-indent: 0;
+}
+
+.prose-academic table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 8.5pt;
+}
+
+.prose-academic th, .prose-academic td {
+  border: 1px solid #cbd5e1;
+  padding: 4px 8px;
+}
+
+.prose-academic th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+.dark .prose-academic-dark table th {
+  background-color: #1e293b;
+}
+.dark .prose-academic-dark table th, 
+.dark .prose-academic-dark table td {
+  border-color: #334155;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .ieee-paper-preview {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  @page {
+    margin: 15mm;
+    size: A4 portrait;
+  }
+}
