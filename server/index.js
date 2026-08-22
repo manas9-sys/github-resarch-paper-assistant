@@ -50,7 +50,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`🚀 Research Paper Assistant Backend is running on port ${PORT}`);
-  console.log(`📡 Health Check: http://localhost:${PORT}/api/health`);
+  console.log(`📡 Health Check:https://github-resarch-paper-assistant.onrender.com/api/health`);
   console.log(`🔑 Gemini Key Status: ${process.env.GEMINI_API_KEY ? 'Active' : 'Fallback Academic Engine Enabled'}`);
   console.log(`====================================================`);
 });
